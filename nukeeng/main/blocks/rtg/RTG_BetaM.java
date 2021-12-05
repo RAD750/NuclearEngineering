@@ -1,5 +1,7 @@
 package nukeeng.main.blocks.rtg;
 
+import java.util.List;
+
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import ic2.api.IWrenchable;
@@ -32,7 +34,7 @@ public class RTG_BetaM extends BlockContainer {
 		setStepSound(Block.soundMetalFootstep);
 		setCreativeTab(CreativeTab.tabNukeEngMain);
 		setBlockName("RTG_BetaM");
-		blockIndexInTexture = 4;
+		blockIndexInTexture = 144;
 	}
 
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4) {
@@ -78,7 +80,7 @@ public class RTG_BetaM extends BlockContainer {
 	}
 
 	public String getTextureFile() {
-		return "/enhancedgeology/textures/oggetti.png";
+		return "/nukeeng/textures/items.png";
 	}
 
 	public boolean isOpaqueCube() {
@@ -104,5 +106,4 @@ public class RTG_BetaM extends BlockContainer {
 	public TileEntity createTileEntity(World world, int meta) {
 		return new TileEntityRTG_BetaM();
 	}
-
 }

@@ -118,8 +118,8 @@ public class Items {
 		LanguageRegistry.addName(ingotYttrium, "Yttrium Ingot");
 		LanguageRegistry.addName(PNJunction, "Thermoelectric Junction");
 		LanguageRegistry.addName(ceramicPlate, "Ceramic Plate");
-		LanguageRegistry.addName(smallTEG, "Small thermoelectric generator");
-		LanguageRegistry.addName(largeTEG, "Large thermoelectric generator");
+		LanguageRegistry.addName(smallTEG, "Small Thermoelectric Generator");
+		LanguageRegistry.addName(largeTEG, "Large Thermoelectric Generator");
 
 	}
 }

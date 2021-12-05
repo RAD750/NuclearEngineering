@@ -29,7 +29,7 @@ public class RTG_IEU1 extends BlockContainer {
 		setStepSound(Block.soundMetalFootstep);
 		setCreativeTab(CreativeTab.tabNukeEngMain);
 		setBlockName("RTG_IEU1");
-		blockIndexInTexture = 4;
+		blockIndexInTexture = 147;
 	}
 
 	public AxisAlignedBB getCollisionBoundingBoxFromPool(World par1World, int par2, int par3, int par4) {
@@ -76,7 +76,7 @@ public class RTG_IEU1 extends BlockContainer {
 	}
 
 	public String getTextureFile() {
-		return "/enhancedgeology/textures/oggetti.png";
+		return "/nukeeng/textures/items.png";
 	}
 
 	public boolean isOpaqueCube() {

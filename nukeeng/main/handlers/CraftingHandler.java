@@ -108,9 +108,18 @@ public class CraftingHandler {
 		GregtechCompat.addVacuumFreezerRecipe(new ItemStack(Items.dustStrontium90, 1), new ItemStack(Items.pelletStrontium90, 1), 14000);
 		GregtechCompat.addVacuumFreezerRecipe(new ItemStack(Items.dustPlutonium238, 1), new ItemStack(Items.pelletPlutonium238, 1), 14000);
 		
-		//PN junction		
-		GregtechCompat.addAssemblerRecipe(ic2.api.Items.getItem("tinCableItem"), ic2.api.Items.getItem("copperCableItem"), new ItemStack(Items.PNJunction), 600, 10);
+		//PN junction	
+		
+		final ItemStack PNJunction = new ItemStack(Items.PNJunction, 1);
+		final Element tellurium = new Element(EnumElement.Te, 1);
+		final Element bismuth = new Element(EnumElement.Bi, 1);
+		final Element copper = new Element(EnumElement.Cu, 1);
+		final Element silicon = new Element(EnumElement.Si, 1); 
+        SynthesisRecipe.add(new SynthesisRecipe(PNJunction, true, 3500, new Chemical[] { copper, bismuth, tellurium, copper, tellurium, silicon, copper, bismuth, tellurium }));
+        DecomposerRecipe.add(new DecomposerRecipe(PNJunction, new Chemical[] { new Element(EnumElement.Te, 3), new Element(EnumElement.Cu, 3), new Element(EnumElement.Bi, 2), new Element(EnumElement.Si, 1)}));
 
+		
+		
 		//Ceramic plate
 		ores = OreDictionary.getOres("gemFeldspar");
 		if ( ores.size() > 0 ) {
@@ -132,7 +141,7 @@ public class CraftingHandler {
 				"CTC", "LPL", "STS", 
 				'C', ic2.api.Items.getItem("advancedCircuit"),
 				'L', lead,
-				'P', new ItemStack(Items.pelletPlutonium238, 5),
+				'P', new ItemStack(Items.pelletPlutonium238),
 				'S', ic2.api.Items.getItem("ironScaffold"),
 				'T', new ItemStack(Items.smallTEG)
 			});
@@ -140,7 +149,7 @@ public class CraftingHandler {
 					"CTC", "LPL", "STS", 
 					'C', ic2.api.Items.getItem("advancedCircuit"),
 					'L', lead,
-					'P', new ItemStack(Items.pelletPlutonium238, 10),
+					'P', new ItemStack(Items.pelletStrontium90),
 					'S', ic2.api.Items.getItem("ironScaffold"),
 					'T', new ItemStack(Items.smallTEG)
 			});
@@ -148,7 +157,7 @@ public class CraftingHandler {
 					"CTC", "LPL", "STS", 
 					'C', ic2.api.Items.getItem("advancedCircuit"),
 					'L', lead,
-					'P', new ItemStack(Items.pelletStrontium90, 5),
+					'P', new ItemStack(Items.pelletPlutonium238, 5),
 					'S', ic2.api.Items.getItem("ironScaffold"),
 					'T', new ItemStack(Items.largeTEG)
 			});
@@ -156,7 +165,7 @@ public class CraftingHandler {
 					"CTC", "LPL", "STS", 
 					'C', ic2.api.Items.getItem("advancedCircuit"),
 					'L', lead,
-					'P', new ItemStack(Items.pelletPlutonium238, 10),
+					'P', new ItemStack(Items.pelletStrontium90, 10),
 					'S', ic2.api.Items.getItem("ironScaffold"),
 					'T', new ItemStack(Items.largeTEG)
 			});
@@ -166,7 +175,5 @@ public class CraftingHandler {
 		
 		//Disinfetta la rotten flesh
 		GregtechCompat.addChemicalRecipe(new ItemStack(Item.rottenFlesh, 64), new ItemStack(Items.pelletCobalt60, 1), new ItemStack(Item.porkRaw), 1200);
-		
-		
 	}
 }
