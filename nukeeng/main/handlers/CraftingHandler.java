@@ -36,7 +36,9 @@ public class CraftingHandler {
 		 */
 		
 		ArrayList<ItemStack> ores;
-			
+		ItemStack waterCell = ic2.api.Items.getItem("waterCell").copy();
+
+		
 		//Yttrio da Minechem
 		final ItemStack yttriumIngot = new ItemStack(Items.ingotYttrium, 1);
 		final Element yttrium = new Element(EnumElement.Y, 1);
@@ -131,7 +133,7 @@ public class CraftingHandler {
 		
 		//TEG
 		GregtechCompat.addAssemblerRecipe(new ItemStack(Items.ceramicPlate, 2), new ItemStack(Items.PNJunction, 16), new ItemStack(Items.smallTEG, 1), 75, 1050);
-		GregtechCompat.addAssemblerRecipe(new ItemStack(Items.ceramicPlate, 8), new ItemStack(Items.PNJunction, 64), new ItemStack(Items.largeTEG, 1), 95, 2100); 
+		GregtechCompat.addAssemblerRecipe(new ItemStack(Items.ceramicPlate, 8), new ItemStack(Items.smallTEG, 64), new ItemStack(Items.largeTEG, 1), 95, 750); 
 		
 		//RTG
 		ores = OreDictionary.getOres("blockLead");
@@ -141,7 +143,7 @@ public class CraftingHandler {
 				"CTC", "LPL", "STS", 
 				'C', ic2.api.Items.getItem("advancedCircuit"),
 				'L', lead,
-				'P', new ItemStack(Items.pelletPlutonium238),
+				'P', new ItemStack(Items.pelletStrontium90),
 				'S', ic2.api.Items.getItem("ironScaffold"),
 				'T', new ItemStack(Items.smallTEG)
 			});
@@ -149,7 +151,7 @@ public class CraftingHandler {
 					"CTC", "LPL", "STS", 
 					'C', ic2.api.Items.getItem("advancedCircuit"),
 					'L', lead,
-					'P', new ItemStack(Items.pelletStrontium90),
+					'P', new ItemStack(Items.pelletPlutonium238),
 					'S', ic2.api.Items.getItem("ironScaffold"),
 					'T', new ItemStack(Items.smallTEG)
 			});
@@ -157,7 +159,7 @@ public class CraftingHandler {
 					"CTC", "LPL", "STS", 
 					'C', ic2.api.Items.getItem("advancedCircuit"),
 					'L', lead,
-					'P', new ItemStack(Items.pelletPlutonium238, 5),
+					'P', new ItemStack(Items.pelletStrontium90, 5),
 					'S', ic2.api.Items.getItem("ironScaffold"),
 					'T', new ItemStack(Items.largeTEG)
 			});
@@ -165,7 +167,7 @@ public class CraftingHandler {
 					"CTC", "LPL", "STS", 
 					'C', ic2.api.Items.getItem("advancedCircuit"),
 					'L', lead,
-					'P', new ItemStack(Items.pelletStrontium90, 10),
+					'P', new ItemStack(Items.pelletPlutonium238, 10),
 					'S', ic2.api.Items.getItem("ironScaffold"),
 					'T', new ItemStack(Items.largeTEG)
 			});
@@ -173,7 +175,20 @@ public class CraftingHandler {
 			Main.nukeLog.warning("Missing Lead Block");;
 		}
 		
+		//smonta la roba arricchita
+		
+		ItemStack h2cell = GregtechCompat.getGregTechItem(2, 1, 0);
+		GregtechCompat.addBlastRecipe(new ItemStack(Items.blanketEnrichedY, 1), waterCell, new ItemStack(Items.dustYttrium90, 1), h2cell, 600, 410, 1075);
+		GregtechCompat.addBlastRecipe(new ItemStack(Items.blanketEnrichedHEU, 1), waterCell, new ItemStack(Items.dustMolybdenum99, 1), h2cell, 600, 410, 1075);
+		GregtechCompat.addBlastRecipe(new ItemStack(Items.blanketEnrichedIr, 1), waterCell, new ItemStack(Items.dustIridium192, 1), h2cell, 600, 410, 1075);
+		GregtechCompat.addBlastRecipe(new ItemStack(Items.blanketEnrichedMGEU, 1), waterCell, new ItemStack(Items.dustAmericium241, 1), h2cell, 600, 410, 1075);
+		GregtechCompat.addBlastRecipe(new ItemStack(Items.blanketEnrichedDU, 1), waterCell, new ItemStack(Items.dustCesium137, 1), h2cell, 600, 410, 1075);
+		GregtechCompat.addBlastRecipe(new ItemStack(Items.blanketEnrichedSteel, 1), waterCell, new ItemStack(Items.dustCobalt60, 1), h2cell, 600, 410, 1075);
+		GregtechCompat.addBlastRecipe(new ItemStack(Items.blanketEnrichedPu, 1), waterCell, new ItemStack(Items.dustIodine131, 1), h2cell, 600, 410, 1075);
+		GregtechCompat.addBlastRecipe(new ItemStack(Items.blanketEnrichedU, 1), waterCell, new ItemStack(Items.dustStrontium90, 1), h2cell, 600, 410, 1075);
+		GregtechCompat.addBlastRecipe(new ItemStack(Items.blanketEnrichedLEU, 1), waterCell, new ItemStack(Items.dustPlutonium238, 1), h2cell, 600, 410, 1075);
+		
 		//Disinfetta la rotten flesh
-		GregtechCompat.addChemicalRecipe(new ItemStack(Item.rottenFlesh, 64), new ItemStack(Items.pelletCobalt60, 1), new ItemStack(Item.porkRaw), 1200);
+		GregtechCompat.addChemicalRecipe(new ItemStack(Item.rottenFlesh, 64), new ItemStack(Items.pelletCobalt60, 1), new ItemStack(Item.porkRaw, 64), 1200);
 	}
 }

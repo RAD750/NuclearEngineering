@@ -21,7 +21,7 @@ import nukeeng.main.Main;
 import nukeeng.main.handlers.radiation.NukeEngDamageSource;
 import nukeeng.main.handlers.radiation.NukeEngPotion;
 
-public class ItemRadioactive extends Item implements IReactorComponent {
+public class ItemRadioactive extends Item {
 
 	private String decayMode;
 	private int specificActivity;
@@ -147,48 +147,5 @@ public class ItemRadioactive extends Item implements IReactorComponent {
 			par3List.add("\247bSpecific activity: \247e" + specificActivity + " GBq/g");
 			break;
 		}
-	}
-
-	@Override
-	public void processChamber(IReactor reactor, ItemStack yourStack, int x, int y) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public boolean acceptUraniumPulse(IReactor reactor, ItemStack yourStack, ItemStack pulsingStack, int youX, int youY,
-			int pulseX, int pulseY) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public boolean canStoreHeat(IReactor reactor, ItemStack yourStack, int x, int y) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-	@Override
-	public int getMaxHeat(IReactor reactor, ItemStack yourStack, int x, int y) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int getCurrentHeat(IReactor reactor, ItemStack yourStack, int x, int y) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public int alterHeat(IReactor reactor, ItemStack yourStack, int x, int y, int heat) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public float influenceExplosion(IReactor reactor, ItemStack yourStack) {
-		// TODO Auto-generated method stub
-		return 0;
 	}
 }

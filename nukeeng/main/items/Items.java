@@ -15,8 +15,10 @@ public class Items {
 	public static Item ingotYttrium;
 	public static Item dustDU, dustHEU, dustMGEU, dustLEU, dustIridium, dustYttrium;
 	public static Item blanketY, blanketDU, blanketHEU, blanketMGEU, blanketLEU, blanketIr, blanketPu, blanketSteel, blanketU;
+	public static Item blanketEnrichedY, blanketEnrichedDU, blanketEnrichedHEU, blanketEnrichedMGEU, blanketEnrichedLEU, blanketEnrichedIr, blanketEnrichedPu, blanketEnrichedSteel, blanketEnrichedU;
 	public static Item dustYttrium90, dustMolybdenum99, dustIridium192, dustAmericium241, dustCesium137, dustCobalt60, dustIodine131, dustStrontium90, dustPlutonium238;
 	public static Item pelletYttrium90,pelletMolybdenum99, pelletIridium192, pelletAmericium241, pelletCesium137, pelletCobalt60, pelletIodine131, pelletStrontium90, pelletPlutonium238;
+	
 	
 	public static Item ceramicPlate, PNJunction, smallTEG, largeTEG;
 	
@@ -43,6 +45,28 @@ public class Items {
 		dustStrontium90 = new ItemRadioactive(17071, 71, "dustStrontium90", 64, "beta", 5217);
 		dustPlutonium238 = new ItemRadioactive(17072, 72, "dustPlutonium238", 64, "alpha", 644);
 
+		// blanket arricchito	
+		blanketEnrichedY = new ItemEnrichedBlanket(17105, 32, "blanketEnrichedY", 1, "beta", 200);
+		blanketEnrichedDU = new ItemEnrichedBlanket(17106, 33, "blanketEnrichedDU", 1, "gamma", 32150);
+		blanketEnrichedHEU = new ItemEnrichedBlanket(17107, 34, "blanketEnrichedHEU", 1, "beta", 629);
+		blanketEnrichedMGEU = new ItemEnrichedBlanket(17108, 35, "blanketEnrichedMGEU", 1, "alpha", 127);
+		blanketEnrichedLEU = new ItemEnrichedBlanket(17109, 36, "blanketEnrichedLEU", 1, "alpha", 644);
+		blanketEnrichedIr = new ItemEnrichedBlanket(17110, 37, "blanketEnrichedIr", 1, "gamma", 22200);
+		blanketEnrichedPu = new ItemEnrichedBlanket(17111, 38, "blanketEnrichedPu", 1, "beta", 46000);
+		blanketEnrichedSteel = new ItemEnrichedBlanket(17112, 39, "blanketEnrichedSteel", 1, "gama", 44000);
+		blanketEnrichedU = new ItemEnrichedBlanket(17113, 40, "blanketEnrichedU", 1, "beta", 5217);
+		
+		// blanket da arricchire
+		blanketY = new ItemBlanket(17032, 32, "blanketY", new ItemStack(Items.blanketEnrichedY, 1), 25000);
+		blanketDU = new ItemBlanket(17033, 33, "blanketDU", new ItemStack(Items.blanketEnrichedDU, 1), 15000);
+		blanketHEU = new ItemBlanket(17034, 34, "blanketHEU", new ItemStack(Items.blanketEnrichedHEU, 1), 16000);
+		blanketMGEU = new ItemBlanket(17035, 35, "blanketMGEU", new ItemStack(Items.blanketEnrichedMGEU, 1), 8200);
+		blanketLEU = new ItemBlanket(17036, 36, "blanketLEU", new ItemStack(Items.blanketEnrichedLEU, 1), 27700);
+		blanketIr = new ItemBlanket(17037, 37, "blanketIr", new ItemStack(Items.blanketEnrichedIr, 1), 7500);
+		blanketPu = new ItemBlanket(17038, 38, "blanketPu", new ItemStack(Items.blanketEnrichedPu, 1), 13000);
+		blanketSteel = new ItemBlanket(17039, 39, "blanketSteel", new ItemStack(blanketEnrichedSteel, 1), 12500);
+		blanketU = new ItemBlanket(17040, 40, "blanketU", new ItemStack(Items.blanketEnrichedU, 1), 6500);
+
 		//pellet dopo sintering (forma finale)
 		pelletYttrium90 = new ItemRadioactive(17096, 96, "pelletYttrium90", 64, "beta", 200);
 		pelletMolybdenum99 = new ItemRadioactive(17097, 97, "pelletMolybdenum99", 64, "beta", 629);
@@ -53,18 +77,7 @@ public class Items {
 		pelletIodine131 = new ItemRadioactive(17102, 102, "pelletIodine131", 64, "beta", 46000);
 		pelletStrontium90 = new ItemRadioactive(17103, 103, "pelletStrontium90", 64, "beta", 5217);
 		pelletPlutonium238 = new ItemRadioactive(17104, 104, "pelletPlutonium238", 64, "alpha", 644);
-
-		// blanket da arricchire
-		blanketY = new ItemBlanket(17032, 32, "blanketY", new ItemStack(Items.dustYttrium90, 1), 25000);
-		blanketDU = new ItemBlanket(17033, 33, "blanketDU", new ItemStack(Items.dustMolybdenum99, 1), 15000);
-		blanketHEU = new ItemBlanket(17034, 34, "blanketHEU", new ItemStack(Items.dustIridium192, 1), 16000);
-		blanketMGEU = new ItemBlanket(17035, 35, "blanketMGEU", new ItemStack(Items.dustAmericium241, 1), 8200);
-		blanketLEU = new ItemBlanket(17036, 36, "blanketLEU", new ItemStack(Items.dustCesium137, 1), 7700);
-		blanketIr = new ItemBlanket(17037, 37, "blanketIr", new ItemStack(Items.dustCobalt60, 1), 7500);
-		blanketPu = new ItemBlanket(17038, 38, "blanketPu", new ItemStack(Items.dustIodine131, 1), 13000);
-		blanketSteel = new ItemBlanket(17039, 39, "blanketSteel", new ItemStack(Items.dustStrontium90, 1), 6500);
-		blanketU = new ItemBlanket(17040, 40, "blanketU", new ItemStack(Items.dustPlutonium238, 1), 12500);
-
+		
 		// materiale per RTG
 		ceramicPlate = new ItemGeneric(17128, 128, "ceramicPlate", 64);
 		PNJunction = new ItemGeneric(17129, 129, "PNJunction", 64);
@@ -94,6 +107,16 @@ public class Items {
 		LanguageRegistry.addName(blanketPu, "Plutonium Blanket");
 		LanguageRegistry.addName(blanketSteel, "Steel Blanket");
 		LanguageRegistry.addName(blanketU, "Uranium Blanket");
+		
+		LanguageRegistry.addName(blanketEnrichedY, "Yttrium Irradiated Blanket");
+		LanguageRegistry.addName(blanketEnrichedDU, "Depleted Uranium Irradiated Blanket");
+		LanguageRegistry.addName(blanketEnrichedHEU, "Highly Enriched Uranium Irradiated Blanket");
+		LanguageRegistry.addName(blanketEnrichedMGEU, "Military Grade Uranium Irradiated Blanket");
+		LanguageRegistry.addName(blanketEnrichedLEU, "Lightly Enriched Uranium Irradiated Blanket");
+		LanguageRegistry.addName(blanketEnrichedIr, "Iridium Irradiated Blanket");
+		LanguageRegistry.addName(blanketEnrichedPu, "Plutonium Irradiated Blanket");
+		LanguageRegistry.addName(blanketEnrichedSteel, "Steel Irradiated Blanket");
+		LanguageRegistry.addName(blanketEnrichedU, "Uranium Irradiated Blanket");
 
 		LanguageRegistry.addName(dustYttrium90, "Yttrium-90 Dust");
 		LanguageRegistry.addName(dustMolybdenum99, "Molybdenum-99 Dust");

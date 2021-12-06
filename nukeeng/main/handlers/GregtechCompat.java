@@ -19,6 +19,25 @@ public class GregtechCompat {
 	}
 
 	/**
+	 * Gets a Block from my Addon.
+	 * @param aIndex Index of my Item:
+	 * 0 Standardblock,
+	 * 1 Machineblock,
+	 * 2 Oreblock,
+	 * 3 That glowing thing from my Lighthelmet.
+	 * @param aAmount Amount of the Item in the returned Stack
+	 * @param aMeta The Metavalue of the Block
+	 * @return The ItemStack you ordered, if not then look at the Log.
+	 */
+	public static ItemStack getGregTechBlock(int aIndex, int aAmount, int aMeta) {
+		try {
+			return (ItemStack)Class.forName("gregtechmod.GT_Mod").getMethod("getGregTechBlock", int.class, int.class, int.class).invoke(null, aIndex, aAmount, aMeta);
+		} catch (Exception e) {}
+		return null;
+	}
+
+
+	/**
 	 * Adds a CentrifugeRecipe
 	 * @param aInput1 must be != null
 	 * @param aCellInput this is for the needed Cells, > 0 for Tincellcount, < 0 for negative Fuelcancount, == 0 for nothing
@@ -207,7 +226,7 @@ public class GregtechCompat {
 		} catch (Exception e) {}
 		return false;
 	}
-	
+
 	/**
 	 * Adds a Wiremill Recipe
 	 * @param aInput1 must be != null
