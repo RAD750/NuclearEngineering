@@ -41,9 +41,9 @@ public class CraftingHandler {
 		
 		//Yttrio da Minechem
 		final ItemStack yttriumIngot = new ItemStack(Items.ingotYttrium, 1);
-		final Element yttrium = new Element(EnumElement.Y, 1);
-        SynthesisRecipe.add(new SynthesisRecipe(yttriumIngot, true, 1000, new Chemical[] { null, yttrium, null, null, yttrium, null, null, yttrium, null }));
-        DecomposerRecipe.add(new DecomposerRecipe(yttriumIngot, new Chemical[] { new Element(EnumElement.Y, 3) }));
+		final Element yttrium = new Element(EnumElement.Y, 2);
+        SynthesisRecipe.add(new SynthesisRecipe(yttriumIngot, false, 1000, new Chemical[] { null, null, null, null, yttrium, null, null, null, null }));
+        DecomposerRecipe.add(new DecomposerRecipe(yttriumIngot, new Chemical[] { yttrium }));
 
         //Macerazione di tutte le dust EnhancedGeology
        
@@ -114,10 +114,10 @@ public class CraftingHandler {
 		
 		final ItemStack PNJunction = new ItemStack(Items.PNJunction, 1);
 		final Element tellurium = new Element(EnumElement.Te, 1);
-		final Element bismuth = new Element(EnumElement.Bi, 1);
+		final Element pb = new Element(EnumElement.Pb, 1);
 		final Element copper = new Element(EnumElement.Cu, 1);
 		final Element silicon = new Element(EnumElement.Si, 1); 
-        SynthesisRecipe.add(new SynthesisRecipe(PNJunction, true, 3500, new Chemical[] { copper, bismuth, tellurium, copper, tellurium, silicon, copper, bismuth, tellurium }));
+        SynthesisRecipe.add(new SynthesisRecipe(PNJunction, true, 3500, new Chemical[] { copper, pb, tellurium, copper, tellurium, silicon, copper, pb, tellurium }));
         DecomposerRecipe.add(new DecomposerRecipe(PNJunction, new Chemical[] { new Element(EnumElement.Te, 3), new Element(EnumElement.Cu, 3), new Element(EnumElement.Bi, 2), new Element(EnumElement.Si, 1)}));
 
 		
@@ -190,5 +190,12 @@ public class CraftingHandler {
 		
 		//Disinfetta la rotten flesh
 		GregtechCompat.addChemicalRecipe(new ItemStack(Item.rottenFlesh, 64), new ItemStack(Items.pelletCobalt60, 1), new ItemStack(Item.porkRaw, 64), 1200);
+		
+		// Dai un uso all'Osmio
+		final ItemStack osmiumIngot = GregtechCompat.getGregTechItem(0, 1, 30);
+		final Element osmium = new Element(EnumElement.Os, 2);
+        SynthesisRecipe.add(new SynthesisRecipe(osmiumIngot, false, 1000, new Chemical[] { null, null, null, null, osmium, null, null, null, null }));
+        DecomposerRecipe.add(new DecomposerRecipe(osmiumIngot, new Chemical[] { osmium }));
+		
 	}
 }

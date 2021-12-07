@@ -10,5 +10,6 @@ public class Localization {
     public static void initLocalization() {
     	addLocalization("potion.radiationSickness", "Radiation Sickness");
     	addLocalization("death.radiationSickness", "%s died from acute radiation sickness");
+    	addLocalization("death.dismantledRTG", "%s wanted to replicate the Goianîa incident and died");
     }
 }
