@@ -33,7 +33,7 @@ public class ItemEnrichedBlanket extends ItemRadioactive implements IReactorComp
 	@Override
 	public int getMaxHeat(IReactor reactor, ItemStack yourStack, int x, int y) {
 		// TODO Auto-generated method stub
-		return 999999;
+		return 99999;
 	}
 
 	@Override

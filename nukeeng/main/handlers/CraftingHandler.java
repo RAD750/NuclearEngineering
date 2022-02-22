@@ -197,5 +197,26 @@ public class CraftingHandler {
         SynthesisRecipe.add(new SynthesisRecipe(osmiumIngot, false, 1000, new Chemical[] { null, null, null, null, osmium, null, null, null, null }));
         DecomposerRecipe.add(new DecomposerRecipe(osmiumIngot, new Chemical[] { osmium }));
 		
+        // Decomponi celle
+        final ItemStack emptyCell = ic2.api.Items.getItem("cell");
+        final Element tin = new Element(EnumElement.Sn, 2);
+        DecomposerRecipe.add(new DecomposerRecipe(emptyCell, new Chemical[] { tin }));
+        SynthesisRecipe.add(new SynthesisRecipe(emptyCell, false, 1000, new Chemical[] { null, null, null, null, null, tin, null, null, null }));
+
+
+        // Dai un uso all'Elio
+        final ItemStack heliumCell = GregtechCompat.getGregTechItem(2, 1, 3);
+        final ItemStack helium3Cell = GregtechCompat.getGregTechItem(2, 1, 6);
+        final Element helium = new Element(EnumElement.He, 8);
+        DecomposerRecipe.add(new DecomposerRecipe(heliumCell, new Chemical[] { helium, tin }));
+        DecomposerRecipe.add(new DecomposerRecipe(helium3Cell, new Chemical[] { helium, tin }));
+        SynthesisRecipe.add(new SynthesisRecipe(heliumCell, false, 1000, new Chemical[] { null, null, null, null, helium, tin, null, null, null }));
+
+        // Mercurio
+        final ItemStack mercuryCell = GregtechCompat.getGregTechItem(2, 1, 16);
+        final Element mercury = new Element(EnumElement.Hg, 4);
+        DecomposerRecipe.add(new DecomposerRecipe(mercuryCell, new Chemical[] { mercury, tin }));
+        SynthesisRecipe.add(new SynthesisRecipe(mercuryCell, false, 1000, new Chemical[] { null, null, null, null, mercury, tin, null, null, null }));
+        
 	}
 }

@@ -57,15 +57,15 @@ public class Items {
 		blanketEnrichedU = new ItemEnrichedBlanket(17113, 40, "blanketEnrichedU", 1, "beta", 5217);
 		
 		// blanket da arricchire
-		blanketY = new ItemBlanket(17032, 32, "blanketY", new ItemStack(Items.blanketEnrichedY, 1), 25000);
-		blanketDU = new ItemBlanket(17033, 33, "blanketDU", new ItemStack(Items.blanketEnrichedDU, 1), 15000);
-		blanketHEU = new ItemBlanket(17034, 34, "blanketHEU", new ItemStack(Items.blanketEnrichedHEU, 1), 16000);
-		blanketMGEU = new ItemBlanket(17035, 35, "blanketMGEU", new ItemStack(Items.blanketEnrichedMGEU, 1), 8200);
-		blanketLEU = new ItemBlanket(17036, 36, "blanketLEU", new ItemStack(Items.blanketEnrichedLEU, 1), 27700);
-		blanketIr = new ItemBlanket(17037, 37, "blanketIr", new ItemStack(Items.blanketEnrichedIr, 1), 7500);
-		blanketPu = new ItemBlanket(17038, 38, "blanketPu", new ItemStack(Items.blanketEnrichedPu, 1), 13000);
-		blanketSteel = new ItemBlanket(17039, 39, "blanketSteel", new ItemStack(blanketEnrichedSteel, 1), 12500);
-		blanketU = new ItemBlanket(17040, 40, "blanketU", new ItemStack(Items.blanketEnrichedU, 1), 6500);
+		blanketY = new ItemBlanket(17032, 32, "blanketY", Items.blanketEnrichedY, 25000);
+		blanketDU = new ItemBlanket(17033, 33, "blanketDU", Items.blanketEnrichedDU, 15000);
+		blanketHEU = new ItemBlanket(17034, 34, "blanketHEU", Items.blanketEnrichedHEU, 16000);
+		blanketMGEU = new ItemBlanket(17035, 35, "blanketMGEU", Items.blanketEnrichedMGEU, 8200);
+		blanketLEU = new ItemBlanket(17036, 36, "blanketLEU", Items.blanketEnrichedLEU, 27700);
+		blanketIr = new ItemBlanket(17037, 37, "blanketIr", Items.blanketEnrichedIr, 7500);
+		blanketPu = new ItemBlanket(17038, 38, "blanketPu", Items.blanketEnrichedPu, 13000);
+		blanketSteel = new ItemBlanket(17039, 39, "blanketSteel", Items.blanketEnrichedSteel, 12500);
+		blanketU = new ItemBlanket(17040, 40, "blanketU", Items.blanketEnrichedU, 6500);
 
 		//pellet dopo sintering (forma finale)
 		pelletYttrium90 = new ItemRadioactive(17096, 96, "pelletYttrium90", 64, "beta", 200);

@@ -10,17 +10,18 @@ import nukeeng.main.CreativeTab;
 
 public class ItemBlanket extends Item implements IReactorComponent {
 	
-	private ItemStack resultItem;
+	private Item resultItem;
 	private int enrichmentDuration;
 
-	public ItemBlanket(int id, int textureId, String itemName, ItemStack resultItem, int enrichmentDuration) {
+	public ItemBlanket(int id, int textureId, String itemName, Item resultItem, int enrichmentDuration) {
 		super(id-256);
 		/**
 		 * Registra un oggetto generico
 		 * @param id ID dell'oggetto
 		 * @param textureId ID della texture
 		 * @param itemName nome oggetto
-		 * @param maxStackSize Max stack size
+		 * @param resultItem item risultante
+		 * @param enrichmentDuration durata arricchimento in tick
 		 * @return Item.
 		 */
 		this.setTextureFile("/nukeeng/textures/items.png");
@@ -45,7 +46,7 @@ public class ItemBlanket extends Item implements IReactorComponent {
 			int pulseX, int pulseY) {
 		final int myLevel = yourStack.getItemDamage() - 1 - reactor.getHeat() / 3000;
 		if (myLevel <= 0) {
-			reactor.setItemAt(youX, youY, resultItem);
+			reactor.setItemAt(youX, youY, new ItemStack(resultItem, 1));
 		}
 		else {
 			yourStack.setItemDamage(myLevel);
