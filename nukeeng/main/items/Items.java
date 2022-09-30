@@ -20,7 +20,7 @@ public class Items {
 	public static Item pelletYttrium90,pelletMolybdenum99, pelletIridium192, pelletAmericium241, pelletCesium137, pelletCobalt60, pelletIodine131, pelletStrontium90, pelletPlutonium238;
 	
 	
-	public static Item ceramicPlate, PNJunction, smallTEG, largeTEG;
+	public static Item ceramicPlate, PNJunction, smallTEG, largeTEG, advHeatingCell;
 	
 	public static void initItems() {
 
@@ -83,6 +83,8 @@ public class Items {
 		PNJunction = new ItemGeneric(17129, 129, "PNJunction", 64);
 		smallTEG = new ItemGeneric(17130, 130, "smallTEG", 64);
 		largeTEG = new ItemGeneric(17131, 131, "largeTEG", 64);
+	    advHeatingCell = new AdvancedHeatingCell(17132, 16, "advCell");
+
 		
 	}
 
@@ -143,6 +145,7 @@ public class Items {
 		LanguageRegistry.addName(ceramicPlate, "Ceramic Plate");
 		LanguageRegistry.addName(smallTEG, "Small Thermoelectric Generator");
 		LanguageRegistry.addName(largeTEG, "Large Thermoelectric Generator");
+		LanguageRegistry.addName(advHeatingCell, "Advanced Heating Cell");
 
 	}
 }

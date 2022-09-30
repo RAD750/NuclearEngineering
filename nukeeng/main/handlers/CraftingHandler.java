@@ -94,7 +94,12 @@ public class CraftingHandler {
 			GregtechCompat.addAssemblerRecipe(plateZircaloy4, GregtechCompat.getGregTechItem(1, 5, 81), new ItemStack(Items.blanketPu, 1, Items.blanketPu.getMaxDamage()-1), 4000, 95);
 			GregtechCompat.addAssemblerRecipe(plateZircaloy4, GregtechCompat.getGregTechItem(1, 64, 26), new ItemStack(Items.blanketSteel, 1, Items.blanketSteel.getMaxDamage()-1), 4000, 95);
 			GregtechCompat.addAssemblerRecipe(plateZircaloy4, GregtechCompat.getGregTechItem(1, 5, 16), new ItemStack(Items.blanketU, 1, Items.blanketU.getMaxDamage()-1), 4000, 95);
-
+	        //Advance Heating Cell
+			plateZircaloy4.stackSize = 1;
+	        GameRegistry.addShapedRecipe(new ItemStack(Items.advHeatingCell, 1), new Object[] {
+	        		"ZCZ", "PPP", "ZPZ", 'Z', plateZircaloy4, 'C', GregtechCompat.getGregTechItem(3, 1, 1), 'P', Items.pelletPlutonium238
+	        });
+	        
 		} else {
 			Main.nukeLog.warning("Missing Zircaloy 4 plate");;
 		}
@@ -217,6 +222,10 @@ public class CraftingHandler {
         final Element mercury = new Element(EnumElement.Hg, 4);
         DecomposerRecipe.add(new DecomposerRecipe(mercuryCell, new Chemical[] { mercury, tin }));
         SynthesisRecipe.add(new SynthesisRecipe(mercuryCell, false, 1000, new Chemical[] { null, null, null, null, mercury, tin, null, null, null }));
+        
+
+        
+        
         
 	}
 }
