@@ -72,7 +72,8 @@ public class RTG_BetaM extends BlockContainer {
 		EntityPlayer player = world.getClosestPlayer(x, y, z, 10);
 		player.addPotionEffect(new PotionEffect(Potion.hunger.id, 3600, 0));
 		player.addPotionEffect(new PotionEffect(Potion.confusion.id, 1100, 2));
-		player.addPotionEffect(new PotionEffect(NukeEngPotion.radiationSickness.id, 500, 0));
+		player.addPotionEffect(new PotionEffect(NukeEngPotion.dismantledRTG.id, 500, 0));
+		
 	}
 
 	public int getRenderType() {

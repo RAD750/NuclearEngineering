@@ -224,8 +224,22 @@ public class CraftingHandler {
         SynthesisRecipe.add(new SynthesisRecipe(mercuryCell, false, 1000, new Chemical[] { null, null, null, null, mercury, tin, null, null, null }));
         
 
+        //Rilevatore di fumo
         
-        
+		ores = OreDictionary.getOres("SmokeDetector");
+		if ( ores.size() > 0 ) {
+			ItemStack smokeDetector = ores.get(0);
+			GameRegistry.addRecipe(smokeDetector, new Object[] {" A ", "APB", "BCN", 'B', new ItemStack(Block.stoneButton), 'N', new ItemStack(Block.music), 
+					'A', GregtechCompat.getGregTechItem(0, 1, 18), 'P', new ItemStack(Items.pelletTinyAmericium241), 'B', ic2.api.Items.getItem("suBattery"),
+					'C', ic2.api.Items.getItem("electronicCircuit")});
+
+			
+			
+		} else {
+			Main.nukeLog.warning("Missing Smoke Detector");
+		}
+		
+        GameRegistry.addShapelessRecipe(new ItemStack(Items.pelletTinyAmericium241, 8), new Object[] {new ItemStack(Items.pelletAmericium241)});
         
 	}
 }

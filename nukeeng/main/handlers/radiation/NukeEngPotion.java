@@ -7,6 +7,7 @@ import net.minecraft.util.DamageSource;
 public class NukeEngPotion extends Potion
 {
     public static final NukeEngPotion radiationSickness;
+    public static final NukeEngPotion dismantledRTG;
 
     public NukeEngPotion(final int id, final boolean badEffect, final int liquidColor) {
         super(id, badEffect, liquidColor);
@@ -17,6 +18,11 @@ public class NukeEngPotion extends Potion
         if (super.id == NukeEngPotion.radiationSickness.id) {
             entity.attackEntityFrom((DamageSource)NukeEngDamageSource.radiationSickness, 10);
         }
+        
+    	if (super.id == NukeEngPotion.dismantledRTG.id) {
+        	entity.attackEntityFrom((DamageSource)NukeEngDamageSource.dismantledRTG, 10);
+        }
+        
     }
     
     @Override
@@ -28,9 +34,13 @@ public class NukeEngPotion extends Potion
         NukeEngPotion.radiationSickness.setPotionName("potion.radiationSickness");
         NukeEngPotion.radiationSickness.setIconIndex(6, 0);
         NukeEngPotion.radiationSickness.setEffectiveness(0.25);
+        NukeEngPotion.dismantledRTG.setPotionName("potion.dismantledRTG");
+        NukeEngPotion.dismantledRTG.setIconIndex(6, 0);
+        NukeEngPotion.dismantledRTG.setEffectiveness(0.25);
     }
     
     static {
         radiationSickness = new NukeEngPotion(24, true, 5149489);
+        dismantledRTG = new NukeEngPotion(25, true, 5149489);
     }
 }

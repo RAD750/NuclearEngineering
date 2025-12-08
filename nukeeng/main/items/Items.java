@@ -18,7 +18,7 @@ public class Items {
 	public static Item blanketEnrichedY, blanketEnrichedDU, blanketEnrichedHEU, blanketEnrichedMGEU, blanketEnrichedLEU, blanketEnrichedIr, blanketEnrichedPu, blanketEnrichedSteel, blanketEnrichedU;
 	public static Item dustYttrium90, dustMolybdenum99, dustIridium192, dustAmericium241, dustCesium137, dustCobalt60, dustIodine131, dustStrontium90, dustPlutonium238;
 	public static Item pelletYttrium90,pelletMolybdenum99, pelletIridium192, pelletAmericium241, pelletCesium137, pelletCobalt60, pelletIodine131, pelletStrontium90, pelletPlutonium238;
-	
+	public static Item pelletTinyAmericium241;
 	
 	public static Item ceramicPlate, PNJunction, smallTEG, largeTEG, advHeatingCell;
 	
@@ -84,6 +84,8 @@ public class Items {
 		smallTEG = new ItemGeneric(17130, 130, "smallTEG", 64);
 		largeTEG = new ItemGeneric(17131, 131, "largeTEG", 64);
 	    advHeatingCell = new AdvancedHeatingCell(17132, 16, "advCell");
+	    
+	    pelletTinyAmericium241 = new ItemRadioactive(17133, 115, "pelletTinyAmericium241", 64, "alpha", 127);
 
 		
 	}
@@ -146,6 +148,8 @@ public class Items {
 		LanguageRegistry.addName(smallTEG, "Small Thermoelectric Generator");
 		LanguageRegistry.addName(largeTEG, "Large Thermoelectric Generator");
 		LanguageRegistry.addName(advHeatingCell, "Advanced Heating Cell");
+		
+		LanguageRegistry.addName(pelletTinyAmericium241, "Tiny Americium-241 Pellet");
 
 	}
 }
